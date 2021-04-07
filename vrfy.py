@@ -72,6 +72,8 @@ def main():
         print('[' + bcolors.INFO + 'I' + bcolors.ENDC + '] ' + 'Checking {}... '.format(args.email, args.server), end='')
         if vrfy(args.email, args.server):
             print(bcolors.OKBLUE + 'OK' + bcolors.ENDC)
+        else:
+            print(bcolors.FAIL + 'Not in there' + bcolors.ENDC)
         
     # Checks a list of email addresses if a list of them is provided by a filename given as argument
     if args.server and args.list:
@@ -94,7 +96,7 @@ def main():
                         pass
                     print(bcolors.OKBLUE + 'OK' + bcolors.ENDC)
                 else:
-                    print('')
+                    print(bcolors.FAIL + 'Not in there' + bcolors.ENDC)
         try:
             output.close()
         except:
